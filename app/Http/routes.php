@@ -1,5 +1,7 @@
 <?php
 
+use App\MockData;
+use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,8 +28,9 @@ Route::post('/api/users/{ user_code }/travels', function() {
 });
 
 /*旅行一覧取得*/
-Route::get('/api/user{ user_code }/travels', function() {
-
+Route::get('/api/users/{user_code}/travels', function($user_code) {
+    $mock = new MockData();
+    return response()->json($mock->travelList);
 });
 
 /*旅行取得*/
@@ -46,6 +49,6 @@ Route::post('/api/travels/{ travel_code }/spots', function() {
 });
 
 /*立ち寄った場所更新*/
-Route::put('/api/spots/{ spot_code }'. function() {
+Route::put('/api/spots/{ spot_code }', function() {
 
 });
