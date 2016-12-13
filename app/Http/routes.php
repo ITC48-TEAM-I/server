@@ -13,9 +13,7 @@ use Illuminate\Http\Response;
 |
 */
 /*ユーザー登録*/
-Route::post('/api/users', function() {
-
-});
+Route::post('/api/users', ['as' => 'post-user-entry','uses' => 'UserController@entry']);
 
 /*ユーザー認証*/
 Route::post('/api/auth', function() {
@@ -23,9 +21,7 @@ Route::post('/api/auth', function() {
 });
 
 /*旅行登録*/
-Route::post('/api/users/{ user_code }/travels', function() {
-
-});
+Route::post('/api/users/{user_code}/travels', ['as' => 'post-travel-entry','uses' => 'TravelController@entry']);
 
 /*旅行一覧取得*/
 Route::get('/api/users/{user_code}/travels', function($user_code) {
@@ -39,9 +35,7 @@ Route::get('/api/travels/{ travel_code }', function() {
 });
 
 /*道順登録*/
-Route::post('/api/travels/{ travel_code }/routes', function() {
-
-});
+Route::post('/api/travels/{travel_code}/routes',['as' => 'post-route-entry','uses' => 'RouteController@entry']);
 
 /*立ち寄った場所登録*/
 Route::post('/api/travels/{ travel_code }/spots', function() {
