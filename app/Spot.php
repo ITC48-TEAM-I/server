@@ -16,4 +16,6 @@ class Spot extends Model
     {
         return $this->belongsToOne('App\Travel','travel_id');
     }
+
+    public $timestamps = false;
 }

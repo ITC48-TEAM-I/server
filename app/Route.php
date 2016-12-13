@@ -16,4 +16,6 @@ class Route extends Model
     {
         return $this->belongsToMany('App\Travel','travel_id');
     }
+
+    public $timestamps = false;
 }
