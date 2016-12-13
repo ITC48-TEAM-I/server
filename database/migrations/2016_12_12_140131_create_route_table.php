@@ -28,6 +28,6 @@ class CreateRouteTable extends Migration
      */
     public function down()
     {
-        schema::drop('route');
+        Schema::drop('route');
     }
 }
