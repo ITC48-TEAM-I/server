@@ -19,7 +19,7 @@ class User extends Authenticatable
 
     public function travels()
     {
-        return $this->belongsToMany('App\Travel','user_id');
+        return $this->hasMany('App\Travel','user_id');
     }
 
     public function scopeFindCode($query,$code)
