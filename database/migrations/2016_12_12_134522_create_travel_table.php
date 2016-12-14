@@ -20,6 +20,7 @@ class CreateTravelTable extends Migration
             $table->double('longitude');
             $table->string('area_name');
             $table->string('country_name');
+            $table->integer('user_id');
         });
     }
 
