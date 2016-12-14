@@ -227,15 +227,6 @@ class MockData {
 						"stay_minute" => 20,
 						"category_code" => "0424001"
 					],
-					[
-						"visit_time" => "2016-11-26 15:01:12",
-						"latitude" => 35.015151388889, 
-						"longitude" => 135.675400277778,
-						"spot_name" => "等観院",
-						"site_url" => "",
-						"stay_minute" => 20,
-						"category_code" => "0424001"
-					]
 				],				
 			],
 			[
