@@ -30,7 +30,7 @@ Route::get('/api/users/{user_code}/travels', function($user_code) {
 });
 
 /*旅行取得*/
-Route::get('/api/travels/{ travel_code }', function() {
+Route::get('/api/travels/{travel_code}', function() {
 
 });
 
@@ -38,11 +38,11 @@ Route::get('/api/travels/{ travel_code }', function() {
 Route::post('/api/travels/{travel_code}/routes',['as' => 'post-route-entry','uses' => 'RouteController@entry']);
 
 /*立ち寄った場所登録*/
-Route::post('/api/travels/{ travel_code }/spots', function() {
+Route::post('/api/travels/{travel_code}/spots', function() {
 
 });
 
 /*立ち寄った場所更新*/
-Route::put('/api/spots/{ spot_code }', function() {
+Route::put('/api/spots/{spot_code}', function() {
 
 });

@@ -14,7 +14,7 @@ class Route extends Model
 
     public function Travel()
     {
-        return $this->belongsToMany('App\Travel','travel_id');
+        return $this->belongsToOne('App\Travel','travel_id');
     }
 
     public $timestamps = false;

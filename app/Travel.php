@@ -14,7 +14,17 @@ class Travel extends Model
 
     public function spots()
     {
-        return $this->belongsToMany('App\Spot','travel_id');
+        return $this->hasMany('App\Spot','travel_id');
+    }
+
+    public function routes()
+    {
+        return $this->hasMany('App\Route','travel_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsToOne('App\User');
     }
 
     public function scopeFindCode($query,$code)

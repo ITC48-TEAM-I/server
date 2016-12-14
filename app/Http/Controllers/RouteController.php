@@ -7,24 +7,40 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App;
+use App\Route;
+use Validator;
 
 class RouteController extends Controller
 {
     public function entry(Request $request,$travel_code)
     {
-    	//json_decodeがうまく動かず。Laravelのドキュメントにjsonはこんな風に受け取るっぽい書き方してた
+    	//json_decodeがうまく動かず。Laravelのドキュメントにjsonはこんな風に受け取るっぽい書き方してた    		
+		$travel = App\Travel::FindCode($travel_code)->first();
+		if(!$request->exists('token') && $travel->user->token !== $request->get('token') ) return response("Forbidden",403);
+
+		try{
+    		$routes = json_decode($request->input('routes'));
+		} catch(Exception $e) {
+			return response("Bad Request",400);
+		}
     	
-    	$data['transit_time'] = $request->input('routes.0.transit_time');
-    	$data['latitude'] = $request->input('routes.0.latitude');
-    	$data['longitude'] = $request->input('routes.0.longitude');
-		$data['travel_id'] = App\Travel::FindCode($travel_code)->first()->id;
+		foreach ($routes as $route) {
+			$key_validator = Validator::make((array)$route,[
+				"transit_time" => "required",
+				"latitude" => "required",
+				"longitude" => "required",				
+			]);
+			if($key_validator->fails()) return response("Bad Request",400);
+		}
+		
+		foreach ($routes as $route) {
+			$route->travel_id = $travel->id;
+			
+			Route::create((array)$route);			
+		}
 
-    	$token = $request->get('token');
-
-    	$routeData = App\Route::create($data);
-
-    	$returnData = App\Route::where('travel_id',$routeData->travel_id)->count();
-
-    	return response()->json($returnData);
+    	return response()->json([
+			"create_count" => count($routes)
+		]);
     }
 }

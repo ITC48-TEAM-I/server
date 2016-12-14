@@ -12,7 +12,7 @@ class Spot extends Model
         'spot_code','travel_id','visit_time','latitude','longitude','spot_name','site_url','stay_minute','category_code',
     ];
 
-    public function spots()
+    public function travel()
     {
         return $this->belongsToOne('App\Travel','travel_id');
     }
