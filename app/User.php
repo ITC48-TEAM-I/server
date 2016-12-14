@@ -22,12 +22,19 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Travel','user_id');
     }
 
+    public function scopeFindCode($query,$code)
+    {
+        return $query->where('user_code',$code);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
+    /*protected $hidden = [
         'password', 'remember_token',
-    ];
+    ];*/
+
+    public $timestamps = false;
 }
