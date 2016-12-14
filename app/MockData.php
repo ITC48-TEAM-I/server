@@ -58,7 +58,7 @@ class MockData {
 				],
 				"spots" => [
 					[
-						"visit_time" => "10:13:15",
+						"visit_time" => "2016-12-12 10:13:15",
 						"latitude" => 35.668859752941586, 
 						"longitude" => 139.73236638250415,
 						"spot_name" => "ミッドタウン",
@@ -67,7 +67,7 @@ class MockData {
 						"category_code" => "0304"
 					],
 					[
-						"visit_time" => "10:13:15",
+						"visit_time" => "2016-12-12 10:13:15",
 						"latitude" => 35.66810801257965, 
 						"longitude" => 139.7329717329569,
 						"spot_name" => "ローソン港赤坂九丁目店",
@@ -129,7 +129,7 @@ class MockData {
 				],
 				"spots" => [
 					[
-						"visit_time" => "10:13:15",
+						"visit_time" => "2016-12-12 10:13:15",
 						"latitude" => 35.668859752941586, 
 						"longitude" => 139.73236638250415,
 						"spot_name" => "ミッドタウン",
@@ -138,7 +138,7 @@ class MockData {
 						"category_code" => "0304"
 					],
 					[
-						"visit_time" => "10:13:15",
+						"visit_time" => "2016-12-12 10:13:15",
 						"latitude" => 35.66810801257965, 
 						"longitude" => 139.7329717329569,
 						"spot_name" => "ローソン港赤坂九丁目店",
