@@ -11,9 +11,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'user';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_code', 'mail_address', 'password','token',
     ];
+
+    public function travels()
+    {
+        return $this->belongsToMany('App\Travel','user_id');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
