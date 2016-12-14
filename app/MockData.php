@@ -211,8 +211,8 @@ class MockData {
 					],
 					[
 						"visit_time" => "2016-11-26 14:30:41",
-						"latitude" => 35.014712777778, 
-						"longitude" => 135.677769722222,
+						"latitude" => 35.01504094786765,
+						"longitude" => 135.67705833291794,
 						"spot_name" => "いしかわ",
 						"site_url" => "",
 						"stay_minute" => 30,
