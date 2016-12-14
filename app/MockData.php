@@ -63,7 +63,8 @@ class MockData {
 						"longitude" => 139.73236638250415,
 						"spot_name" => "ミッドタウン",
 						"site_url" => "http://hoge.com",
-						"stay_minute" => 40
+						"stay_minute" => 40,
+						"category_code" => "0304"
 					],
 					[
 						"visit_time" => "10:13:15",
@@ -71,7 +72,8 @@ class MockData {
 						"longitude" => 139.7329717329569,
 						"spot_name" => "ローソン港赤坂九丁目店",
 						"site_url" => "http://hoge.com",
-						"stay_minute" => 40
+						"stay_minute" => 40,
+						"category_code" => "0204"
 					]
 				],
 			],
