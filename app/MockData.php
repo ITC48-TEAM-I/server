@@ -220,8 +220,8 @@ class MockData {
 					],
 					[
 						"visit_time" => "2016-11-26 15:01:12",
-						"latitude" => 35.015151388889, 
-						"longitude" => 135.675400277778,
+						"latitude" => 35.01563378905248, 
+						"longitude" => 135.67578696584482,
 						"spot_name" => "等観院",
 						"site_url" => "",
 						"stay_minute" => 20,
