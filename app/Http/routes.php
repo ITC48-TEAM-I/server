@@ -12,6 +12,9 @@ use Illuminate\Http\Response;
 | and give it the controller to call when that URI is requested.
 |
 */
+
+header("Access-Control-Allow-Origin: *");
+
 /*ユーザー登録*/
 Route::post('/api/users', ['as' => 'post-user-entry','uses' => 'UserController@entry']);
 
@@ -31,7 +34,8 @@ Route::get('/api/users/{user_code}/travels', function($user_code) {
 
 /*旅行取得*/
 Route::get('/api/travels/{travel_code}', function() {
-
+    $mock = new MockData();
+    return response()->json($mock->travelList[0]);
 });
 
 /*道順登録*/
